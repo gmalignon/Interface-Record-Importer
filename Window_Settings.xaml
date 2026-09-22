@@ -1,0 +1,157 @@
+﻿<Window x:Class="InterfaceRecordImporter.Window_Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterfaceRecordImporter"
+        mc:Ignorable="d"
+        Title="Settings" Height="550" Width="850" WindowStartupLocation="CenterScreen"
+         WindowStyle="None" AllowsTransparency="True">
+    <Window.Background>
+        <SolidColorBrush Opacity="0" Color="White"/>
+    </Window.Background>
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
+    <Viewbox VerticalAlignment="Top" >
+
+        <Border Background="White" CornerRadius="20"  BorderThickness="2,2,2,2" BorderBrush="Black" Width="1000" Padding="15"  Margin="5">
+            <StackPanel Orientation="Vertical"  Background="White">
+                <Grid VerticalAlignment="Top" Name="Grid_Main" Height="Auto" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="210" />
+                        <ColumnDefinition Width="*"  />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"  />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="80" />
+                    </Grid.RowDefinitions>
+                    <Border  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Background="White" CornerRadius="5"  BorderThickness="1" BorderBrush="DarkGray"  Padding="5"  Margin="5">
+                        <Label  VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="28" FontWeight="Bold" Foreground="#FF042271" Content="Initial Settings" Margin="0,0,0,0" />
+                    </Border>
+                    <Border  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="White" CornerRadius="5"  BorderThickness="1" BorderBrush="DarkGray"  Padding="5"  Margin="5">
+                        <Grid VerticalAlignment="Top"  Height="Auto" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="220" />
+                                <ColumnDefinition Width="*"  />
+                            </Grid.ColumnDefinitions>
+                            <Label  VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"  FontSize="18" FontWeight="Bold" Foreground="Black"  Margin="0,0,0,0" Content="SmartAgent Server:" Height="37" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontStyle="Italic"/>
+                            <TextBox x:Name="TextBox_SQLServer"  Grid.Column="1" Grid.Row="0"   VerticalAlignment="Center" Width="Auto" FontSize="24" TextDecorations="{x:Null}" Margin="0,0" Height="50" VerticalContentAlignment="Center" FontWeight="Bold" Padding="2"/>
+                        </Grid>
+                    </Border>
+                    <Border  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Background="White" CornerRadius="5"  BorderThickness="1" BorderBrush="DarkGray"  Padding="5"  Margin="5">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="220" />
+                                <ColumnDefinition Width="110"  />
+                                <ColumnDefinition Width="200"  />
+                                <ColumnDefinition Width="*"  />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" FontSize="18" FontWeight="Bold" Foreground="Black"  Margin="0,0,0,0" Content="Amadeus Files Location:" HorizontalAlignment="Left" HorizontalContentAlignment="Center" FontStyle="Italic" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                            <Button  Content="CLEAR" Grid.Row="0" Grid.Column="1"  Height="46" HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="Button_AmadeusFolderLocationClear" VerticalAlignment="Center" Width="90" FontSize="18" FontWeight="Bold" Focusable="False" Foreground="DarkRed" IsCancel="True" Click="Button_AmadeusFolderLocationClear_Click"   />
+                            <Button  Content="Click to Select Folder" Grid.Row="0" Grid.Column="2"  Height="46" HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="Button_AmadeusFolderLocation" Width="180" FontSize="16" FontWeight="Bold" Focusable="False" Foreground="#FF042271" IsCancel="True" Click="Button_AmadeusFileLocation_Click" VerticalAlignment="Center"  />
+                            <TextBox Grid.Row="0" Grid.Column="3" x:Name="TextBox_AmadeusFileLocation"  IsReadOnly="True" Height="50"  VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Padding="2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <Border  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Background="White" CornerRadius="5"  BorderThickness="1" BorderBrush="DarkGray"  Padding="5"  Margin="5" Visibility="Visible">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="220" />
+                                <ColumnDefinition Width="110"  />
+                                <ColumnDefinition Width="200"  />
+                                <ColumnDefinition Width="*"  />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" FontSize="18" FontWeight="Bold" Foreground="Black"  Margin="0,0,0,0" Content="Sabre Files Location:" HorizontalAlignment="Left" HorizontalContentAlignment="Center" FontStyle="Italic" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                            <Button  Content="CLEAR" Grid.Row="0" Grid.Column="1"  Height="46" HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="Button_SabreFolderLocationClear" VerticalAlignment="Center" Width="90" FontSize="18" FontWeight="Bold" Focusable="False" Foreground="DarkRed" IsCancel="True" Click="Button_SabreFolderLocationClear_Click"   />
+                            <Button  Content="Click to Select Folder" Grid.Row="0" Grid.Column="2"  Height="46" HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="Button_SabreFolderLocation" Width="180" FontSize="16" FontWeight="Bold" Focusable="False" Foreground="#FF042271" IsCancel="True" Click="Button_SabreFolderLocation_Click" VerticalAlignment="Center"  />
+                            <TextBox Grid.Row="0" Grid.Column="3" x:Name="TextBox_SabreFileLocation"  IsReadOnly="True" Height="50"  VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Padding="2"/>
+                        </Grid>
+                    </Border>
+                    <Border  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Background="White" CornerRadius="5"  BorderThickness="1" BorderBrush="DarkGray"  Padding="5"  Margin="5" Visibility="Visible">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="220" />
+                                <ColumnDefinition Width="110"  />
+                                <ColumnDefinition Width="200"  />
+                                <ColumnDefinition Width="*"  />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" FontSize="18" FontWeight="Bold" Foreground="Black"  Margin="0,0,0,0" Content="Apollo Files Location:" HorizontalAlignment="Left" HorizontalContentAlignment="Center" FontStyle="Italic" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                            <Button  Content="CLEAR" Grid.Row="0" Grid.Column="1"  Height="46" HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="Button_ApolloFolderLocationClear" VerticalAlignment="Center" Width="90" FontSize="18" FontWeight="Bold" Focusable="False" Foreground="DarkRed" IsCancel="True" Click="Button_ApolloFolderLocationClear_Click"   />
+                            <Button  Content="Click to Select Folder" Grid.Row="0" Grid.Column="2"  Height="46" HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="Button_ApolloFolderLocation" Width="180" FontSize="16" FontWeight="Bold" Focusable="False" Foreground="#FF042271" IsCancel="True" Click="Button_ApolloFolderLocation_Click" VerticalAlignment="Center"  />
+                            <TextBox Grid.Row="0" Grid.Column="3" x:Name="TextBox_ApolloFileLocation"  IsReadOnly="True" Height="50"  VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Padding="2"/>
+                        </Grid>
+                    </Border>
+                    <Border  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Background="White" CornerRadius="5"  BorderThickness="1" BorderBrush="DarkGray"  Padding="5"  Margin="5" Visibility="Visible">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="220" />
+                                <ColumnDefinition Width="110"  />
+                                <ColumnDefinition Width="200"  />
+                                <ColumnDefinition Width="*"  />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" FontSize="18" FontWeight="Bold" Foreground="Black"  Margin="0,0,0,0" Content="Worldspan Files Location:" HorizontalAlignment="Left" HorizontalContentAlignment="Center" FontStyle="Italic" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                            <Button  Content="CLEAR" Grid.Row="0" Grid.Column="1"  Height="46" HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="Button_WorldspanFolderLocationClear" VerticalAlignment="Center" Width="90" FontSize="18" FontWeight="Bold" Focusable="False" Foreground="DarkRed" IsCancel="True" Click="Button_WorldspanFolderLocationClear_Click"   />
+                            <Button  Content="Click to Select Folder" Grid.Row="0" Grid.Column="2"  Height="46" HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="Button_WorldspanFolderLocation" Width="180" FontSize="16" FontWeight="Bold" Focusable="False" Foreground="#FF042271" IsCancel="True" Click="Button_WorldspanFolderLocation_Click" VerticalAlignment="Center"  />
+                            <TextBox Grid.Row="0" Grid.Column="3" x:Name="TextBox_WorldspanFileLocation"  IsReadOnly="True" Height="50"  VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Padding="2"/>
+                        </Grid>
+                    </Border>
+                    <Border  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Background="White" CornerRadius="5"  BorderThickness="1" BorderBrush="DarkGray"  Padding="5"  Margin="5" Visibility="Visible">
+                        <Line></Line>
+                    </Border>
+                    <Border  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" Background="White" CornerRadius="5"  BorderThickness="1" BorderBrush="DarkGray"  Padding="5"  Margin="5" Visibility="Visible">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="220" />
+                                <ColumnDefinition Width="110"  />
+                                <ColumnDefinition Width="200"  />
+                                <ColumnDefinition Width="*"  />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" FontSize="16" FontWeight="Bold" Foreground="Black"  Margin="0,0,0,0" Content="Copy GDS Files to this Folder:" HorizontalAlignment="Left" HorizontalContentAlignment="Center" FontStyle="Italic" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                            <Button  Content="CLEAR" Grid.Row="0" Grid.Column="1"  Height="46" HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="Button_DuplicateFolderLocationClear" VerticalAlignment="Center" Width="90" FontSize="18" FontWeight="Bold" Focusable="False" Foreground="DarkRed" IsCancel="True" Click="Button_DuplicateFolderLocationClear_Click"   />
+                            <Button  Content="Click to Select Folder" Grid.Row="0" Grid.Column="2"  Height="46" HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="Button_DuplicateFolderLocation" Width="180" FontSize="16" FontWeight="Bold" Focusable="False" Foreground="#FF042271" IsCancel="True" Click="Button_DuplicateFolderLocation_Click" VerticalAlignment="Center"  />
+                            <TextBox Grid.Row="0" Grid.Column="3" x:Name="TextBox_DuplicateFileLocation"  IsReadOnly="True" Height="50"  VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Padding="2"/>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8"  Background="White" CornerRadius="5"  BorderThickness="1" BorderBrush="DarkGray"  Padding="5"  Margin="5" >
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                
+                            </Grid.RowDefinitions>
+
+                            <Button Grid.Row="0" Grid.Column="0" Content="Cancel" Height="50" HorizontalAlignment="Left" Margin="0,0,0,0" Name="Button_Cancel" VerticalAlignment="Center" Width="200" FontSize="24" FontWeight="Bold" Focusable="False" Foreground="DarkRed" IsCancel="True" Click="Button_Cancel_Click"/>
+                            <Button Grid.Row="0" Grid.Column="1" Content="OK" Height="50" HorizontalAlignment="Right" Margin="0,0,0,0" Name="Button_Try" VerticalAlignment="Center" Width="200" FontSize="24" FontWeight="Bold" Focusable="False" Foreground="DarkGreen" IsDefault="True" Click="Button_Try_Click" />
+                        </Grid>
+                    </Border>
+                </Grid>
+                
+            </StackPanel>
+        </Border>
+    </Viewbox>
+</Window>
